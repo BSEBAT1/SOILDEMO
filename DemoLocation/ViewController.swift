@@ -74,6 +74,13 @@ extension ViewController: MKMapViewDelegate {
              askForLocationPermissions()
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let user = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        return user
+    }
 }
 
 
