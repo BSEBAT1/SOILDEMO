@@ -13,6 +13,8 @@ import MapKit
 class ViewController: UIViewController{
     
     @IBOutlet private var mapView: MKMapView!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var textViewConstraint: NSLayoutConstraint!
     
     private let geoCoder = CLGeocoder()
     private let locationManager = CLLocationManager()
@@ -23,6 +25,9 @@ class ViewController: UIViewController{
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.showsUserLocation = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideFilterView))
+        self.mapView.addGestureRecognizer(tapGesture)
+        
     }
     
     func askForLocationPermissions() {
@@ -58,6 +63,16 @@ extension ViewController: CLLocationManagerDelegate {
             self.mapView.setRegion(region, animated: true)
         }
     }
+    
+    @objc func hideFilterView() {
+        
+        self.textViewConstraint.constant = 60
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5) { [weak self] in
+                self?.view.layoutIfNeeded()
+            }
+        }
+    }
 }
 
 extension ViewController: MKMapViewDelegate {
@@ -71,15 +86,35 @@ extension ViewController: MKMapViewDelegate {
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         } else {
-             askForLocationPermissions()
+            askForLocationPermissions()
         }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let user = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
-        
+        user.canShowCallout = true
+        user.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         return user
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        guard let coordinate =  mapView.userLocation.location else {return}
+        geoCoder.reverseGeocodeLocation(coordinate) { (placemarks, error) in
+            if let first = placemarks?.first {
+                DispatchQueue.main.async {
+                    guard let name = first.name, let postal = first.postalCode, let counter = first.country else {return}
+                    self.textView.text = "Address: \(name) Zip: \(postal) Country: \(counter)"
+                    self.textView.translatesAutoresizingMaskIntoConstraints = false
+                    self.textViewConstraint.constant = 0
+                    UIView.animate(withDuration: 0.5) { [weak self] in
+                                   self?.view.layoutIfNeeded()
+                               }
+                }
+                
+            }
+        }
     }
 }
 

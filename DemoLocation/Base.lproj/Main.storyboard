@@ -18,18 +18,34 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-JR-G2O">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JkY-pP-6I2">
+                                <rect key="frame" x="0.0" y="877" width="414" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="D1O-IF-7P0"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JkY-pP-6I2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="60" id="1CA-92-NWk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nba-JR-G2O" secondAttribute="trailing" id="6WR-eQ-CaS"/>
+                            <constraint firstItem="JkY-pP-6I2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xj3-vb-EHS"/>
                             <constraint firstItem="Nba-JR-G2O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="imO-P3-2rh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nba-JR-G2O" secondAttribute="bottom" id="ji9-kt-nTB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JkY-pP-6I2" secondAttribute="trailing" id="sPu-4z-d0e"/>
                             <constraint firstItem="Nba-JR-G2O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ucN-oD-xK3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Nba-JR-G2O" id="nj0-vJ-r2p"/>
+                        <outlet property="textView" destination="JkY-pP-6I2" id="S95-lW-GbG"/>
+                        <outlet property="textViewConstraint" destination="1CA-92-NWk" id="MWj-R7-0ob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
