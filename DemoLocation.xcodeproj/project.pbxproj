@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F543515F24D31232008A8EF8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F543515E24D31232008A8EF8 /* StartViewController.swift */; };
 		F5568A6824C899EE002C88C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5568A6724C899EE002C88C6 /* AppDelegate.swift */; };
 		F5568A6A24C899EE002C88C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5568A6924C899EE002C88C6 /* SceneDelegate.swift */; };
 		F5568A6C24C899EE002C88C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5568A6B24C899EE002C88C6 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F543515E24D31232008A8EF8 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		F5568A6424C899EE002C88C6 /* DemoLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5568A6724C899EE002C88C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5568A6924C899EE002C88C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				F5568A6724C899EE002C88C6 /* AppDelegate.swift */,
 				F5568A6924C899EE002C88C6 /* SceneDelegate.swift */,
 				F5568A6B24C899EE002C88C6 /* ViewController.swift */,
+				F543515E24D31232008A8EF8 /* StartViewController.swift */,
 				F5568A6D24C899EE002C88C6 /* Main.storyboard */,
 				F5568A7024C899F0002C88C6 /* Assets.xcassets */,
 				F5568A7224C899F0002C88C6 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5568A6C24C899EE002C88C6 /* ViewController.swift in Sources */,
+				F543515F24D31232008A8EF8 /* StartViewController.swift in Sources */,
 				F5568A6824C899EE002C88C6 /* AppDelegate.swift in Sources */,
 				F5568A6A24C899EE002C88C6 /* SceneDelegate.swift in Sources */,
 			);
